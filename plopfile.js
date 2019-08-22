@@ -9,8 +9,6 @@ module.exports = plop => {
     return dateObj = `${date}/${month}/${fullYear} ${currentTime}`;
   });
 
-  plop.setPartial('today', '{{date}}');
-
   plop.setGenerator ('component', {
     description: 'This is a ReactJS Component Scaffolding file',
     prompts: [
