@@ -1,0 +1,13 @@
+# Data for   : Button Component
+# Created on : 22/8/2019 10:06:02 PM
+# Created by : VaibhavShringarpure
+
+# sample YAML Data
+# person:
+#   firstname: Tom
+#   lastname: Smith
+#   year: 1982
+#   favorites: - This is array
+#     - tennis
+#     - golf
+#   attributes: { Handed: Left , BirthPlace: Home } - This is object
