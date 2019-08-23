@@ -1,4 +1,4 @@
-/* Component 	: {{pascalCase ComponentName}}
+/* Component 	: {{pascalCase ComponentName}}Container Component
  * Created on	: {{date}}
  * Created by	: {{upperCase ComponentAuthor}}
  */
@@ -20,7 +20,7 @@ const defaultProps = {
 };
 
 /* Functional Component Function below with state and Life Cycle Methods */
-const {{pascalCase ComponentName}} = props => {
+const {{pascalCase ComponentName}}Container = props => {
   const [stateItem, setStateItem] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const {{pascalCase ComponentName}} = props => {
   return <div />;
 };
 
-{{pascalCase ComponentName}}.propTypes = propTypes; // from Line 11
-{{pascalCase ComponentName}}.defaultProps = defaultProps; // from Line 17
+{{pascalCase ComponentName}}Container.propTypes = propTypes; // from Line 11
+{{pascalCase ComponentName}}Container.defaultProps = defaultProps; // from Line 17
 
-export default {{pascalCase ComponentName}};
+export default {{pascalCase ComponentName}}Container;

@@ -19,14 +19,8 @@ module.exports = plop => {
       {
         type: "list",
         name: "type",
-        choices: ["without-state", "with-state"],
+        choices: ["Presentational", "Container"],
         message: "What type of Component do you want to create ?"
-      },
-      {
-        type: "list",
-        name: "folder",
-        choices: ["styles", "components"],
-        message: "Which folder does this component be in ?"
       },
       {
         type: "input",
@@ -35,7 +29,7 @@ module.exports = plop => {
       }
     ],
     actions: data => {
-      let folderPath = data.folder === "styles" ? "./src/components/styles/{{pascalCase ComponentName}}" : "./src/components/components/{{pascalCase ComponentName}}";
+      let folderPath = data.type === "Presentational" ? "./src/components/presentational/{{pascalCase ComponentName}}" : "./src/components/container/{{pascalCase ComponentName}}";
 
       let actions = [
         {
@@ -60,17 +54,27 @@ module.exports = plop => {
         }
       ];
 
-      if (data.type === "functional") {
+      if (data.type === "Presentational") {
         actions.push({
           type: "add",
           path: folderPath + "/index.jsx",
-          templateFile: "./template/component-function.hbs"
+          templateFile: "./template/presentational-component.hbs"
+        });
+        actions.push({
+          type: "add",
+          path: folderPath +"/{{pascalCase ComponentName}}.spec.jsx",
+          templateFile: "./template/presentational-component.spec.hbs"
         });
       } else {
         actions.push({
           type: "add",
           path: folderPath + "/index.jsx",
-          templateFile: "./template/component-with-state.hbs"
+          templateFile: "./template/container-component.hbs"
+        });
+        actions.push({
+          type: "add",
+          path: folderPath +"/{{pascalCase ComponentName}}.spec.jsx",
+          templateFile: "./template/container-component.spec.hbs"
         });
       }
       return actions;

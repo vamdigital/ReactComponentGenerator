@@ -1,0 +1,17 @@
+/* Component 	: {{pascalCase ComponentName}} Test
+ * Created on	: {{date}}
+ * Created by	: {{upperCase ComponentAuthor}}
+ */
+
+ import {{pascalCase ComponentName}} from '.'
+
+ describe('<{{pascalCase ComponentName}} />', () => {
+   it('should render without error', () => {
+     let wrapper;
+     const props;
+     beforeAll(() => {
+       wrapper = shallow(<{{pascalCase ComponentName}} {...props} />);
+     })
+     expect(wrapper).toBe(true);
+   })
+ })
