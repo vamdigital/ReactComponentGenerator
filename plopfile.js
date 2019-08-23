@@ -1,12 +1,11 @@
 module.exports = plop => {
   plop.setHelper("date", function() {
-    let dateObj;
     const today = new Date();
     const date = today.getDate();
     const month = today.getMonth() + 1;
     const fullYear = today.getFullYear();
     const currentTime = today.toLocaleTimeString();
-    return (dateObj = `${date}/${month}/${fullYear} ${currentTime}`);
+    return (`${date}/${month}/${fullYear} ${currentTime}`);
   });
 
   plop.setGenerator("component", {
