@@ -1,10 +1,10 @@
 /* Component 	: {{pascalCase ComponentName}}
  * Created on	: {{date}}
- * Created by	: {{pascalCase ComponentAuthor}}
+ * Created by	: {{upperCase ComponentAuthor}}
  */
 
 /* Import Statement Below */
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './{{pascalCase ComponentName}}.scss';
 
@@ -19,23 +19,20 @@ const defaultProps = {
   // name: 'Vaibhav Shringarpure',
 };
 
-/* Stateful Component Class Below */
-class {{pascalCase ComponentName}} extends Component {
-  //Constructor Method below
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+/* Functional Component Function below with state and Life Cycle Methods */
+const {{pascalCase ComponentName}} = props => {
+  const [stateItem, setStateItem] = useState([]);
 
+  useEffect(() => {
+    // LifeCycle Hook - Write Here the Methods to run using LifeCycle
+  }, []);
+  
   //Define your Methods Here
 
-  //Render Method returning JSX
-  render() {
-    return <div />;
-  }
-}
+  //Returns JSX below
+  return <div />;
+};
 
-//Typechecking with PropTypes
 {{pascalCase ComponentName}}.propTypes = propTypes; // from Line 11
 {{pascalCase ComponentName}}.defaultProps = defaultProps; // from Line 17
 

@@ -19,8 +19,8 @@ module.exports = plop => {
       {
         type: "list",
         name: "type",
-        choices: ["functional", "class"],
-        message: "Which Component do you want to create ?"
+        choices: ["without-state", "with-state"],
+        message: "What type of Component do you want to create ?"
       },
       {
         type: "list",
@@ -35,7 +35,6 @@ module.exports = plop => {
       }
     ],
     actions: data => {
-      debugger;
       let folderPath = data.folder === "styles" ? "./src/components/styles/{{pascalCase ComponentName}}" : "./src/components/components/{{pascalCase ComponentName}}";
 
       let actions = [
@@ -64,14 +63,14 @@ module.exports = plop => {
       if (data.type === "functional") {
         actions.push({
           type: "add",
-          path: folderPath + "/{{pascalCase ComponentName}}.jsx",
+          path: folderPath + "/index.jsx",
           templateFile: "./template/component-function.hbs"
         });
       } else {
         actions.push({
           type: "add",
-          path: folderPath + "/{{pascalCase ComponentName}}.jsx",
-          templateFile: "./template/component-class.hbs"
+          path: folderPath + "/index.jsx",
+          templateFile: "./template/component-with-state.hbs"
         });
       }
       return actions;
